@@ -9,15 +9,15 @@
                 @if(\Route::getFacadeRoot()->current()->uri() == 'edit-project-assignment/{id}')
                     <ol class="breadcrumb">
                         <li class="breadcrumb-icon">
-                            <a href="/dashboard">
+                            <a href="{{url('/dashboard')}}">
                                 <span class="fa fa-home"></span>
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="{{url('/dashboard')}}"> Dashboard </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Projects </a>
+                            <a href="{{url('/project-assignment-listing')}}"> Projects </a>
                         </li>
                         <li class="breadcrumb-current-item"> Edit </li>
                     </ol>
@@ -26,15 +26,15 @@
                 @else
                     <ol class="breadcrumb">
                         <li class="breadcrumb-icon">
-                            <a href="/dashboard">
+                            <a href="{{url('/dashboard')}}">
                                 <span class="fa fa-home"></span>
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="{{url('/dashboard')}}"> Dashboard </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Projects </a>
+                            <a href="{{url('/project-assignment-listing')}}"> Projects </a>
                         </li>
                         <li class="breadcrumb-current-item"> Assign projects </li>
                     </ol>
@@ -158,7 +158,7 @@
                                                     <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
 
                                                 </div>
-                                                <div class="col-md-2"><a href="/edit-project-assignment/{id}" >
+                                                <div class="col-md-2"><a href="{{url('/edit-project-assignment')}}/{id}" >
                                                         <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
                                             </div>
 

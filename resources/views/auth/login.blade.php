@@ -32,7 +32,6 @@
 </head>
 
 <body class="utility-page sb-l-c sb-r-c">
-
 <!-- -------------- Body Wrap  -------------- -->
 <div id="main" class="animated fadeIn">
 

@@ -8,15 +8,15 @@
             <div class="topbar-left">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-icon">
-                        <a href="/dashboard">
+                        <a href="{{url('/dashboard')}}">
                             <span class="fa fa-home"></span>
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="{{url('/dashboard')}}"> Dashboard </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Employee </a>
+                        <a href="{{url('/employee-manager')}}"> Employee </a>
                     </li>
                     <li class="breadcrumb-current-item"> Bank Details </li>
                 </ol>
@@ -117,6 +117,7 @@
                     <div class="form-group">
                         <label for="employee_name">Employee Name</label>
                         <input type="text" id="employee_name" class="form-control" readonly>
+                        <input type="hidden" name="url" id="url" value="{{url('/update-account-details')}}">
                     </div>
 
                     <div class="form-group">

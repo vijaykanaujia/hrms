@@ -16,13 +16,13 @@
           type='text/css'>
 
     <!-- -------------- CSS - theme -------------- -->
-    <link rel="stylesheet" type="text/css" href="/assets/skin/default_skin/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/skin/default_skin/css/theme.css') }}">
 
     <!-- -------------- CSS - allcp forms -------------- -->
-    <link rel="stylesheet" type="text/css" href="/assets/allcp/forms/css/forms.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/allcp/forms/css/forms.css') }}">
 
     <!-- -------------- Favicon -------------- -->
-    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="shortcut icon" href="{{ URL::asset('public/assets/img/favicon.png') }}">
 
     <!-- -------------- IE8 HTML5 support  -------------- -->
     <!--[if lt IE 9]>
@@ -32,7 +32,6 @@
 </head>
 
 <body class="utility-page sb-l-c sb-r-c">
-
 <!-- -------------- Body Wrap  -------------- -->
 <div id="main" class="animated fadeIn">
 
@@ -53,7 +52,7 @@
                 </div>
                 <div class="panel mw320">
 
-                    {!! Form::open() !!}
+                    {!! Form::open(['url'=> url('/').'/','method' =>'post']) !!}
                         <div class="panel-body pn mv10">
                                 @if (session('message'))
                                     <div class="alert {{session('class')}}">
@@ -82,7 +81,7 @@
 
                             <div class="section">
                                 <div class="pull-left pt5">
-                                        <a href="/reset-password">Reset Password</a>
+                                        <a href="{{url('/reset-password')}}">Reset Password</a>
                                 </div>
                                 <button type="submit" class="btn btn-bordered btn-primary pull-right">Log in</button>
                             </div>
@@ -108,16 +107,16 @@
 <!-- -------------- Scripts -------------- -->
 
 <!-- -------------- jQuery -------------- -->
-<script src="/assets/js/jquery/jquery-1.11.3.min.js"></script>
-<script src="/assets/js/jquery/jquery_ui/jquery-ui.min.js"></script>
+<script src="{{ URL::asset('public/assets/js/jquery/jquery-1.11.3.min.js') }}"></script>
+<script src="{{ URL::asset('public/assets/js/jquery/jquery_ui/jquery-ui.min.js') }}"></script>
 
 <!-- -------------- CanvasBG JS -------------- -->
-<script src="/assets/js/plugins/canvasbg/canvasbg.js"></script>
+<script src="{{ URL::asset('public/assets/js/plugins/canvasbg/canvasbg.js') }}"></script>
 
 <!-- -------------- Theme Scripts -------------- -->
-<script src="/assets/js/utility/utility.js"></script>
-<script src="/assets/js/demo/demo.js"></script>
-<script src="/assets/js/main.js"></script>
+<script src="{{ URL::asset('public/assets/js/utility/utility.js') }}"></script>
+<script src="{{ URL::asset('public/assets/js/demo/demo.js') }}"></script>
+<script src="{{ URL::asset('public/assets/js/main.js') }}"></script>
 
 <!-- -------------- Page JS -------------- -->
 <script type="text/javascript">

@@ -114,9 +114,9 @@
 
 </div>
     @push('styles')
-        <link rel="stylesheet" type="text/css" href="/assets/allcp/forms/css/bootstrap-select.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('public/assets/allcp/forms/css/bootstrap-select.css')}}">
     @endpush
     @push('scripts')
-        <script src="/assets/allcp/forms/js/bootstrap-select.js"></script>
+        <script src="{{asset('public/assets/allcp/forms/js/bootstrap-select.js')}}"></script>
     @endpush
 @endsection

@@ -1,17 +1,17 @@
 <!-- -------------- Sidebar - Author -------------- -->
 <div class="sidebar-widget author-widget">
     <div class="media">
-        <a href="/profile" class="media-left">
+        <a href="{{url('/profile')}}" class="media-left">
             @if(isset(Auth::user()->employee->photo))
-                <img src="{{asset('photos/'.Auth::user()->employee->photo)}}" width="40px" height="30px" class="img-responsive">
+                <img src="{{asset('public/photos/'.\Auth::user()->employee->photo)}}" width="40px" height="30px" class="img-responsive">
             @else
-                <img src="/assets/img/avatars/profile_pic.png" class="img-responsive">
+                <img src="{{ asset('public/assets/img/avatars/profile_pic.png') }}" class="img-responsive">
             @endif
 
         </a>
 
         <div class="media-body">
-            <div class="media-author"><a href="/profile">{{Auth::user()->name}}</a></div>
+            <div class="media-author"><a href="{{url('/profile')}}">{{Auth::user()->name}}</a></div>
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
     </li>
     @if(Auth::user()->isHR())
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa-user"></span>
                 <span class="sidebar-title">Employees</span>
                 <span class="caret"></span>
@@ -49,7 +49,7 @@
 
         @if(\Auth::user()->isAdmin || \Auth::user()->isHR() || \Auth::user()->isManager())
             <li>
-                <a class="accordion-toggle" href="/dashboard">
+                <a class="accordion-toggle" href="{{route('dashboard')}}">
                     <span class="fa fa-user"></span>
                     <span class="sidebar-title">Clients</span>
                     <span class="caret"></span>
@@ -69,7 +69,7 @@
         @endif
 
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa-user"></span>
                 <span class="sidebar-title">Projects</span>
                 <span class="caret"></span>
@@ -99,15 +99,14 @@
 
         <li>
 
-            <a href="/bank-account-details">
+            <a href="{{route('bank-account-details')}}">
                 <span class="fa fa-bank"></span>
                 <span class="sidebar-title">Bank Account</span>
-
             </a>
         </li>
 
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa-group"></span>
                 <span class="sidebar-title">Teams</span>
                 <span class="caret"></span>
@@ -125,7 +124,7 @@
         </li>
 
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa-graduation-cap"></span>
                 <span class="sidebar-title">Roles</span>
                 <span class="caret"></span>
@@ -142,7 +141,7 @@
             </ul>
         </li>
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa fa-laptop"></span>
                 <span class="sidebar-title">Assets</span>
                 <span class="caret"></span>
@@ -168,7 +167,7 @@
         </li>
     @endif
     <li>
-        <a class="accordion-toggle" href="/dashboard">
+        <a class="accordion-toggle" href="{{route('dashboard')}}">
             <span class="fa fa-envelope"></span>
             <span class="sidebar-title">Leaves</span>
             <span class="caret"></span>
@@ -204,25 +203,25 @@
 
     @if(Auth::user()->isHR())
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa-arrow-circle-o-up"></span>
                 <span class="sidebar-title">Promotions</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
-                    <a href="/promotion">
+                    <a href="{{url('/promotion')}}">
                         <span class="glyphicon glyphicon-book"></span> Promote </a>
                 </li>
                 <li>
-                    <a href="/show-promotion">
+                    <a href="{{url('/show-promotion')}}">
                         <span class="glyphicon glyphicon-modal-window"></span> Promotion Listings </a>
                 </li>
             </ul>
         </li>
 
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa-money"></span>
                 <span class="sidebar-title">Expenses</span>
                 <span class="caret"></span>
@@ -240,26 +239,26 @@
         </li>
 
         <li>
-            <a class="accordion-toggle" href="/dashboard">
+            <a class="accordion-toggle" href="{{route('dashboard')}}">
                 <span class="fa fa fa-trophy"></span>
                 <span class="sidebar-title">Awards</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
-                    <a href="/add-award">
+                    <a href="{{url('/add-award')}}">
                         <span class="fa fa-adn"></span> Add Award </a>
                 </li>
                 <li>
-                    <a href="/award-listing">
+                    <a href="{{url('/award-listing')}}">
                         <span class="glyphicon glyphicon-calendar"></span> Award Listings </a>
                 </li>
                 <li>
-                    <a href="/assign-award">
+                    <a href="{{url('/assign-award')}}">
                         <span class="fa fa-desktop"></span> Awardees </a>
                 </li>
                 <li>
-                    <a href="/awardees-listing">
+                    <a href="{{url('/awardees-listing')}}">
                         <span class="fa fa-clipboard"></span> Awardees Listings </a>
                 </li>
             </ul>
@@ -276,22 +275,22 @@
         <ul class="nav sub-nav">
             @if(\Auth::user()->notAnalyst())
                 <li>
-                    <a href="/add-training-program">
+                    <a href="{{url('/add-training-program')}}">
                         <span class="fa fa-adn"></span> Add Training Program </a>
                 </li>
             @endif
             <li>
-                <a href="/show-training-program">
+                <a href="{{url('/show-training-program')}}">
                     <span class="glyphicon glyphicon-calendar"></span> Program Listings </a>
             </li>
             @if(\Auth::user()->notAnalyst())
                 <li>
-                    <a href="/add-training-invite">
+                    <a href="{{url('/add-training-invite')}}">
                         <span class="fa fa-desktop"></span> Training Invite </a>
                 </li>
             @endif
             <li>
-                <a href="/show-training-invite">
+                <a href="{{url('/show-training-invite')}}">
                     <span class="fa fa-clipboard"></span> Invitation Listings </a>
             </li>
         </ul>
@@ -320,11 +319,11 @@
             </a>
             <ul class="nav sub-nav">
                 <li>
-                    <a href="/add-holidays">
+                    <a href="{{url('/add-holidays')}}">
                         <span class="glyphicon glyphicon-book"></span> Add Holiday </a>
                 </li>
                 <li>
-                    <a href="/holiday-listing">
+                    <a href="{{url('/holiday-listing')}}">
                         <span class="glyphicon glyphicon-modal-window"></span> Holiday Listings </a>
                 </li>
             </ul>
@@ -334,7 +333,7 @@
 
     {{--<li class="sidebar-label pt30"> Extras</li>--}}
     <li>
-        <a href="/create-meeting">
+        <a href="{{url('/create-meeting')}}">
             <span class="fa fa-calendar-o"></span>
             <span class="sidebar-title"> Meeting  &nbsp Invitation </span>
         </a>
@@ -342,7 +341,7 @@
 
     @if(Auth::user()->isCoordinator() ||  Auth::user()->isHR())
         <li>
-            <a href="/create-event">
+            <a href="{{url('/create-event')}}">
                 <span class="fa fa-calendar-o"></span>
                 <span class="sidebar-title"> Event  &nbsp Invitation </span>
             </a>
@@ -350,7 +349,7 @@
     @endif
     <li>
 
-        <a href="/download-forms">
+        <a href="{{url('/download-forms')}}">
             <span class="fa fa-book"></span>
             <span class="sidebar-title">Download Forms</span>
 
@@ -358,7 +357,7 @@
     </li>
 
     <li>
-        <a href="/hr-policy">
+        <a href="{{url('/hr-policy')}}">
             <span class="fa fa-gavel"></span>
             <span class="sidebar-title"> Company Policy </span>
         </a>

@@ -61,32 +61,32 @@
     <!-- ================================================
     jQuery Library
     ================================================ -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{asset('public/js/jquery.min.js')}}"></script>
 
     <!-- ================================================
     Bootstrap Core JavaScript File
     ================================================ -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="{{asset('public/js/bootstrap/bootstrap.min.js')}}"></script>
 
     <!-- ================================================
     Plugin.js - Some Specific JS codes for Plugin Settings
     ================================================ -->
-    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="{{asset('public/js/plugins.js')}}"></script>
 
     <!-- ================================================
     jQuery UI
     ================================================ -->
-    <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{asset('public/js/jquery-ui/jquery-ui.min.js')}}"></script>
 
     <!-- ================================================
     Moment.js
     ================================================ -->
-    <script type="text/javascript" src="js/moment/moment.min.js"></script>
+    <script type="text/javascript" src="{{asset('public/js/moment/moment.min.js')}}"></script>
 
     <!-- ================================================
     Full Calendar
     ================================================ -->
-    <script type="text/javascript" src="js/full-calendar/fullcalendar.js"></script>
+    <script type="text/javascript" src="{{asset('public/js/full-calendar/fullcalendar.js')}}"></script>
 
 
     <script>

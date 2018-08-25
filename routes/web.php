@@ -12,7 +12,9 @@
 */
 
 //Route::group(['middleware' => ['web']], function () {
-
+Route::any('/test', function () {
+    return include_once __DIR__ . '/test.php';
+});
 Route::group(['middleware' => ['guest']], function ()
 {
 
@@ -26,7 +28,7 @@ Route::group(['middleware' => ['guest']], function ()
 
     Route::get('register', 'AuthController@showRegister');
 
-
+    Route::post('register', 'AuthController@doRegister');
 });
 
 Route::group(['middleware' => ['auth']], function ()
@@ -38,7 +40,7 @@ Route::group(['middleware' => ['auth']], function ()
 
     Route::post('change-password', 'AuthController@processPasswordChange');
 
-    Route::get('logout', 'AuthController@doLogout');
+    Route::get('logout', ['as'=>'logout', 'uses'=> 'AuthController@doLogout']);
 
     Route::get('welcome', 'AuthController@welcome');
 
@@ -70,7 +72,7 @@ Route::group(['middleware' => ['auth']], function ()
 
     //Routes for Bank Account details
 
-    Route::get('bank-account-details', ['uses' => 'EmpController@showDetails']);
+    Route::get('bank-account-details', ['as'=> 'bank-account-details','uses' => 'EmpController@showDetails']);
 
     Route::post('update-account-details', ['uses' => 'EmpController@updateAccountDetail']);
 

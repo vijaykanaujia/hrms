@@ -7,15 +7,15 @@
     <div class="topbar-left">
         <ol class="breadcrumb">
             <li class="breadcrumb-icon">
-                <a href="/dashboard">
+                <a href="{{url('/dashboard')}}">
                     <span class="fa fa-home"></span>
                 </a>
             </li>
             <li class="breadcrumb-active">
-                <a href="/dashboard">Dashboard</a>
+                <a href="{{url('/dashboard')}}">Dashboard</a>
             </li>
             <li class="breadcrumb-link">
-                <a href="/dashboard">Home</a>
+                <a href="{{url('/dashboard')}}">Home</a>
             </li>
             <li class="breadcrumb-current-item">Dashboard</li>
         </ol>
@@ -38,7 +38,7 @@
                     <div class="panel-body">
                         <div class="row pv10">
                             <div class="col-xs-5 ph10">
-                                <img src="/assets/img/pages/clipart2.png" class="img-responsive mauto" alt=""/></div>
+                                <img src="{{asset('public/assets/img/pages/clipart2.png')}}" class="img-responsive mauto" alt=""/></div>
                             <div class="col-xs-7 pl5">
                                 <h3 class="text-muted"><a href="{{route('employee-manager')}}"> EMPLOYEE MANAGER</a></h3>
                                 {{--<h2 class="fs50 mt5 mbn">385</h2>--}}
@@ -51,7 +51,7 @@
                 <div class="panel panel-tile">
                     <div class="panel-body">
                         <div class="row pv10">
-                            <div class="col-xs-5 ph10"><img src="/assets/img/pages/clipart0.png"
+                            <div class="col-xs-5 ph10"><img src="{{asset('public/assets/img/pages/clipart0.png')}}"
                                                             class="img-responsive mauto" alt=""/></div>
                             <div class="col-xs-7 pl5">
                                 <h3 class="text-muted"> <a href="{{route('total-leave-list')}}"> LEAVE <br/> MANAGER </a></h3>
@@ -64,7 +64,7 @@
                     <div class="panel panel-tile">
                         <div class="panel-body">
                             <div class="row pv10">
-                                <div class="col-xs-5 ph10"><img src="/assets/img/pages/Laptop Sketch-64x64"
+                                <div class="col-xs-5 ph10"><img src="{{asset('public/assets/img/pages/Laptop Sketch-64x64')}}"
                                                                 class="img-responsive mauto" style="height: 100px; width: 100px;" alt=""/></div>
                                 <div class="col-xs-7 pl5">
                                     <h3 class="text-muted"> <a href="{{route('asset-listing')}}"> ASSET <br /> MANAGER </a></h3>
@@ -77,7 +77,7 @@
                     <div class="panel panel-tile">
                         <div class="panel-body">
                             <div class="row pv10">
-                                <div class="col-xs-5 ph10"><img src="/assets/img/pages/dollar.jpg"
+                                <div class="col-xs-5 ph10"><img src="{{asset('public/assets/img/pages/dollar.jpg')}}"
                                                                 class="img-responsive mauto" style="height: 100px; width: 100px;" alt=""/></div>
                                 <div class="col-xs-7 pl5">
                                     <h3 class="text-muted"> <a href="{{route('expense-list')}}"> EXPENSE <br /> MANAGER </a></h3>
@@ -90,7 +90,7 @@
                 <div class="panel panel-tile">
                     <div class="panel-body">
                         <div class="row pv10">
-                            <div class="col-xs-5 ph10"><img src="/assets/img/pages/clipart5.png"
+                            <div class="col-xs-5 ph10"><img src="{{asset('public/assets/img/pages/clipart5.png')}}"
                                                             class="img-responsive mauto" alt=""/></div>
                             <div class="col-xs-7 pl5">
                                 <h3 class="text-muted"><a href="{{route('attendance-manager')}}"> ATTENDANCE MANAGER </a></h3>
@@ -107,7 +107,7 @@
                     <div class="panel panel-tile">
                         <div class="panel-body">
                             <div class="row pv10">
-                                <div class="col-xs-5 ph10"><img src="/assets/img/pages/clipart0.png"
+                                <div class="col-xs-5 ph10"><img src="{{asset('public/assets/img/pages/clipart0.png')}}"
                                                                 class="img-responsive mauto" alt=""/></div>
                                 <div class="col-xs-7 pl5">
                                     <h3 class="text-muted"><a href="{{route('my-leave-list')}}"> LEAVES </a></h3>
@@ -122,7 +122,7 @@
                 <div class="panel panel-tile">
                     <div class="panel-body">
                         <div class="row pv10">
-                            <div class="col-xs-5 ph10"><img src="/assets/img/pages/clipart6.png"
+                            <div class="col-xs-5 ph10"><img src="{{asset('public/assets/img/pages/clipart6.png')}}"
                                                             class="img-responsive mauto" alt=""/></div>
                             <div class="col-xs-7 pl5">
                                 <h3 class="text-muted"><a href="{{route('hr-policy')}}"> HR POLICIES </a></h3>

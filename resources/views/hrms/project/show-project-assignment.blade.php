@@ -8,15 +8,15 @@
             <div class="topbar-left">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-icon">
-                        <a href="/dashboard">
+                        <a href="{{url('/dashboard')}}">
                             <span class="fa fa-home"></span>
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="{{url('/dashboard')}}"> Dashboard </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Assigned Project </a>
+                        <a href="{{url('/list-project')}}"> Assigned Project </a>
                     </li>
                     <li class="breadcrumb-current-item"> Project Assignment Listings </li>
                 </ol>
@@ -77,10 +77,10 @@
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">
                                                                 <li>
-                                                                    <a href="/edit-project-assignment/{{$project->id}}">Edit</a>
+                                                                    <a href="{{url('/edit-project-assignment')}}/{{$project->id}}">Edit</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="/delete-project-assignment/{{$project->id}}">Delete</a>
+                                                                    <a href="{{url('/delete-project-assignment')}}/{{$project->id}}">Delete</a>
                                                                 </li>
                                                             </ul>
                                                         </div>

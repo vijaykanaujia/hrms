@@ -9,12 +9,12 @@
             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-asset-assignment/{id}')
                 <ol class="breadcrumb">
                     <li class="breadcrumb-icon">
-                        <a href="/dashboard">
+                        <a href="{{url('/dashboard')}}">
                             <span class="fa fa-home"></span>
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="{{url('/dashboard')}}"> Dashboard </a>
                     </li>
                     <li class="breadcrumb-link">
                         <a href=""> Assets </a>
@@ -26,12 +26,12 @@
             @else
             <ol class="breadcrumb">
                 <li class="breadcrumb-icon">
-                    <a href="/dashboard">
+                    <a href="{{url('/dashboard')}}">
                         <span class="fa fa-home"></span>
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="{{url('/dashboard')}}"> Dashboard </a>
                 </li>
                 <li class="breadcrumb-link">
                     <a href=""> Assets </a>
@@ -159,7 +159,7 @@
 
                                                      <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
                                             </div>
-                                            <div class="col-md-2"><a href="/assign-asset" >
+                                            <div class="col-md-2"><a href="{{url('/assign-asset')}}" >
                                                     <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
                                         </div>
                                         </div>
@@ -178,6 +178,6 @@
 </div>
 @endsection
 @push('scripts')
-    <script src="/assets/js/pages/forms-widgets.js"></script>
-    <script src="/assets/js/custom.js"></script>
+    <script src="{{asset('public/assets/js/pages/forms-widgets.js')}}"></script>
+    <script src="{{asset('/assets/js/custom.js')}}"></script>
     @endpush

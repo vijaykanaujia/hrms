@@ -8,12 +8,12 @@
         <div class="topbar-left">
             <ol class="breadcrumb">
                 <li class="breadcrumb-icon">
-                    <a href="/dashboard">
+                    <a href="{{ url('/dashboard') }}">
                         <span class="fa fa-home"></span>
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="{{ url('/dashboard') }}"> Dashboard </a>
                 </li>
                 <li class="breadcrumb-link">
                     <a href=""> Employees </a>
@@ -114,10 +114,10 @@
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
                                                     <li>
-                                                        <a href="/edit-emp/{{$emp->id}}">Edit</a>
+                                                        <a href="{{ url('/edit-emp') }}/{{$emp->id}}">Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/delete-emp/{{$emp->id}}">Delete</a>
+                                                        <a href="{{ url('/delete-emp') }}/{{$emp->id}}">Delete</a>
                                                     </li>
                                                 </ul>
                                             </div>

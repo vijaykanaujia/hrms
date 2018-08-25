@@ -1,51 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
+    <!-- -------------- Meta and Title -------------- -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Kode is a Premium Bootstrap Admin Template, It's responsive, clean coded and mobile friendly">
-    <meta name="keywords" content="bootstrap, admin, dashboard, flat admin template, responsive," />
-    <title>Digital IP Insights - HRMS</title>
+    <title>Human Resource Management System</title>
+    <meta name="keywords" content="HTML5, Bootstrap 3, Admin Template, UI Theme"/>
+    <meta name="description" content="Alliance - A Responsive HTML5 Admin UI Framework">
+    <meta name="author" content="ThemeREX">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ========== Css Files ========== -->
-    <style type="text/css">
-        body{background: #F5F5F5;}
-    </style>
+    <!-- -------------- Fonts -------------- -->
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet'
+          type='text/css'>
+
+    <!-- -------------- CSS - theme -------------- -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/skin/default_skin/css/theme.css') }}">
+
+    <!-- -------------- CSS - allcp forms -------------- -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/allcp/forms/css/forms.css') }}">
+
+    <!-- -------------- Favicon -------------- -->
+    <link rel="shortcut icon" href="{{ URL::asset('public/assets/img/favicon.png') }}">
+
+    <!-- -------------- IE8 HTML5 support  -------------- -->
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body style="background-image: url('img/bg-9-full.jpg');">
 
-<div class="login-form">
-    {!! Form::open() !!}
-    <div class="top">
-        <img src="/assets/img/sipi_7.jpg" alt="icon" class="icon">
-        <h1>Digital IP</h1>
-        <h4>Human Resource Management System</h4>
-    </div>
-    <div class="form-area">
-        <div class="group">
-            <input type="text" class="form-control" placeholder="Username">
-            <i class="fa fa-user"></i>
+<body class="utility-page sb-l-c sb-r-c">
+<!-- -------------- Body Wrap  -------------- -->
+<div id="main" class="animated fadeIn">
+
+    <!-- -------------- Main Wrapper -------------- -->
+    <section id="content_wrapper">
+
+        <div id="canvas-wrapper">
+            <canvas id="demo-canvas"></canvas>
         </div>
-        <div class="group">
-            <input type="text" class="form-control" placeholder="E-mail">
-            <i class="fa fa-envelope-o"></i>
-        </div>
-        <div class="group">
-            <input type="password" class="form-control" placeholder="Password">
-            <i class="fa fa-key"></i>
-        </div>
-        <div class="group">
-            <input type="password" class="form-control" placeholder="Password again">
-            <i class="fa fa-key"></i>
-        </div>
-        <button type="submit" class="btn btn-default btn-block">REGISTER NOW</button>
-    </div>
-    {!! Form::close() !!}
-    {{--<div class="footer-links row">
-        <div class="col-xs-6"><a href="#"><i class="fa fa-external-link"></i><span style="color:#FFFFFF"> Register Now</span></a></div>
-        <div class="col-xs-6 text-right"><a href="#"><i class="fa fa-lock"></i><span style="color:#FFFFFF"> Forgot password</span></a></div>
-    </div>--}}
+
+        <!-- -------------- Content -------------- -->
+        <section id="content">
+
+            <!-- -------------- Login Form -------------- -->
+            <div class="allcp-form theme-primary mw320" id="login">
+                <div class="bg-primary text-center mb20 br3 pv15">
+                    <span style="color:#FFFFFF"><strong><u>H</u>uman <u>R</u>esource <u>M</u>anagement <u>S</u>ystem</strong></span>
+                </div>
+                <div class="panel mw320">
+
+                    {!! Form::open() !!}
+                    <div class="panel-body pn mv10">
+                        @if (session('message'))
+                            <div class="alert {{session('class')}}">
+                                {{ session('message') }}
+                            </div>
+                        @endif
+                        <div class="section">
+                            <label for="username" class="field prepend-icon">
+                                <input type="text" class="form-control" placeholder="Username">
+                                <label for="email" class="field-icon">
+                                    <i class="fa fa-user"></i>
+                                </label>
+                            </label>
+                        </div>
+                        <div class="section">
+                            <label for="username" class="field prepend-icon">
+                                <input type="text" class="form-control" placeholder="E-mail">
+                                <label for="email" class="field-icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                </label>
+                            </label>
+                        </div>
+                        <div class="section">
+                            <label for="username" class="field prepend-icon">
+                                <input type="password" class="form-control" placeholder="Password">
+                                <label for="email" class="field-icon">
+                                    <i class="fa fa-key"></i>
+                                </label>
+                            </label>
+                        </div>
+                        <div class="section">
+                            <label for="username" class="field prepend-icon">
+                                <input type="password" class="form-control" placeholder="Password again">
+                                <label for="email" class="field-icon">
+                                    <i class="fa fa-key"></i>
+                                </label>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-area">
+                        <button type="submit" class="btn btn-default btn-block">REGISTER NOW</button>
+                    </div>
+                    {!! Form::close() !!}
+                    {{--<div class="footer-links row">
+                        <div class="col-xs-6"><a href="#"><i class="fa fa-external-link"></i><span style="color:#FFFFFF"> Register Now</span></a></div>
+                        <div class="col-xs-6 text-right"><a href="#"><i class="fa fa-lock"></i><span style="color:#FFFFFF"> Forgot password</span></a></div>
+                    </div>--}}
+                </div>
+                <!-- -------------- /Panel -------------- -->
+            </div>
+            <!-- -------------- /Spec Form -------------- -->
+
+        </section>
+        <!-- -------------- /Content -------------- -->
+
+    </section>
+    <!-- -------------- /Main Wrapper -------------- -->
+
 </div>
+<!-- -------------- /Body Wrap  -------------- -->
+
+<!-- -------------- Scripts -------------- -->
+
+<!-- -------------- jQuery -------------- -->
+<script src="{{ URL::asset('public/assets/js/jquery/jquery-1.11.3.min.js') }}"></script>
+<script src="{{ URL::asset('public/assets/js/jquery/jquery_ui/jquery-ui.min.js') }}"></script>
+
+<!-- -------------- CanvasBG JS -------------- -->
+<script src="{{ URL::asset('public/assets/js/plugins/canvasbg/canvasbg.js') }}"></script>
+
+<!-- -------------- Theme Scripts -------------- -->
+<script src="{{ URL::asset('public/assets/js/utility/utility.js') }}"></script>
+<script src="{{ URL::asset('public/assets/js/demo/demo.js') }}"></script>
+<script src="{{ URL::asset('public/assets/js/main.js') }}"></script>
+
+<!-- -------------- Page JS -------------- -->
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+
+        "use strict";
+
+        // Init Theme Core
+        Core.init();
+
+        // Init Demo JS
+        Demo.init();
+
+        // Init CanvasBG
+        CanvasBG.init({
+            Loc: {
+                x: window.innerWidth / 5,
+                y: window.innerHeight / 10
+            }
+        });
+
+    });
+</script>
+
+<!-- -------------- /Scripts -------------- -->
+
 </body>
+
 </html>

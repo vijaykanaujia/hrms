@@ -3,7 +3,6 @@
 @section('content')
         <!-- START CONTENT -->
 <div class="content">
-
     <header id="topbar" class="alt">
         <div class="topbar-left">
             <ol class="breadcrumb">
@@ -20,7 +19,7 @@
             </ol>
         </div>
         <div class="topbar-right">
-            <h4><a class="link-unstyled" href="/sample_sheet/attendance_sheet1.xlsx" title="">
+            <h4><a class="link-unstyled" href="{{ asset('public/sample_sheet/attendance_sheet1.xlsx') }}" title="">
                     <i class="fa fa-cloud-download text-purple pr10"></i> Sample Sheet </a></h4>
         </div>
     </header>
@@ -203,5 +202,5 @@
 
 @endsection
 @push('scripts')
-    <script src="/assets/js/pages/forms-widgets.js"></script>
+    <script src="{{ asset('public/assets/js/pages/forms-widgets.js') }}"></script>
 @endpush

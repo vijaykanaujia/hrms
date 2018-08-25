@@ -9,15 +9,15 @@
                 @if(\Route::getFacadeRoot()->current()->uri() == 'edit-project-assignment/{id}')
                     <ol class="breadcrumb">
                         <li class="breadcrumb-icon">
-                            <a href="/dashboard">
+                            <a href="{{url('/dashboard')}}">
                                 <span class="fa fa-home"></span>
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="{{url('/dashboard')}}"> Dashboard </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Projects </a>
+                            <a href="{{url('/project-assignment-list')}}"> Projects </a>
                         </li>
                         <li class="breadcrumb-current-item"> Edit {{$projects->name}} </li>
                     </ol>
@@ -26,15 +26,15 @@
                 @else
                     <ol class="breadcrumb">
                         <li class="breadcrumb-icon">
-                            <a href="/dashboard">
+                            <a href="{{url('/dashboard')}}">
                                 <span class="fa fa-home"></span>
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="{{url('/dashboard')}}"> Dashboard </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Projects </a>
+                            <a href="{{url('/project-assignment-list')}}"> Projects </a>
                         </li>
                         <li class="breadcrumb-current-item"> Assign Projects </li>
                     </ol>
@@ -155,10 +155,9 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
-
                                                     <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
                                                 </div>
-                                                <div class="col-md-2"><a href="/assign-project" >
+                                                <div class="col-md-2"><a href="{{url('/assign-project')}}">
                                                         <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
                                             </div>
                                         </div>
@@ -175,9 +174,9 @@
         </section>
     </div>
     
-    <script src="assets/js/pages/forms-widgets.js" type="text/javascript"></script>
+    <script src="{{asset('public/assets/js/pages/forms-widgets.js')}}" type="text/javascript"></script>
 @endsection
 @push('scripts')
-    <script src="/assets/js/pages/forms-widgets.js"></script>
-    <script src="/assets/js/custom.js"></script>
+    <script src="{{asset('public/assets/js/pages/forms-widgets.js')}}"></script>
+    <script src="{{asset('public/assets/js/custom.js')}}"></script>
 @endpush

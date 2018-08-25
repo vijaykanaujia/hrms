@@ -16,32 +16,32 @@
 
 
     <!-- -------------- Icomoon -------------- -->
-    <link rel="stylesheet" type="text/css" href="/assets/fonts/icomoon/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/fonts/icomoon/icomoon.css') }}">
 
     <!-- -------------- FullCalendar -------------- -->
-    <link rel="stylesheet" type="text/css" href="/assets/js/plugins/fullcalendar/fullcalendar.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/js/plugins/magnific/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/js/plugins/fullcalendar/fullcalendar.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/js/plugins/magnific/magnific-popup.css') }}">
 
     <!-- -------------- Plugins -------------- -->
-    <link rel="stylesheet" type="text/css" href="/assets/js/plugins/c3charts/c3.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/js/plugins/c3charts/c3.min.css') }}">
 
     <!-- -------------- CSS - theme -------------- -->
-    <link rel="stylesheet" type="text/css" href="/assets/skin/default_skin/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/skin/default_skin/css/theme.css') }}">
 
 
     <!-- -------------- CSS - allcp forms -------------- -->
-    <link rel="stylesheet" type="text/css" href="/assets/allcp/forms/css/forms.css">
-    <link rel="stylesheet" type="text/css" href="/assets/allcp/forms/css/widget.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/allcp/forms/css/forms.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/allcp/forms/css/widget.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="assets/js/plugins/select2/css/core.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/js/plugins/select2/css/core.css') }}">
     <!-- -------------- Favicon -------------- -->
-    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="shortcut icon" href="{{ asset('public/assets/img/favicon.png') }}">
 
     <!--  Custom css -->
-    <link rel="stylesheet" type="text/css" href="/assets/custom.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/custom.css') }}">
 
     <!-- Sweet alert -->
-    <link rel="stylesheet" type="text/css" href="/assets/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/sweetalert.css') }}">
 
 @stack('styles')
 
@@ -480,8 +480,8 @@
         <footer id="content-footer" class="affix">
             <div class="row">
                 <div class="col-md-6">
-                    <span class="footer-legal">KANAK © 2016 All rights reserved. By <a
-                                href="http://www.kanakmanjari.com/" target="_blank">Kanak Manjari</a></span>
+                    <span class="footer-legal">HRMS © 2018 All rights reserved. By <a
+                                href="http://www.kanakmanjari.com/" target="_blank">Techcomp</a></span>
                 </div>
                 <div class="col-md-6 text-right">
                     <span class="footer-meta"></span>
@@ -587,45 +587,49 @@ h
 <!-- -------------- Scripts -------------- -->
 
 <!-- -------------- jQuery -------------- -->
-<script src="/assets/js/jquery/jquery-1.11.3.min.js"></script>
+<script src="{{ asset('public/assets/js/jquery/jquery-1.11.3.min.js') }}"></script>
 {{--<script src="/assets/js/jquery/jquery-2.2.4.min.js"></script>--}}
-<script src="/assets/js/jquery/jquery_ui/jquery-ui.min.js"></script>
+<script src="{{ asset('public/assets/js/jquery/jquery_ui/jquery-ui.min.js') }}"></script>
 
 <!-- -------------- HighCharts Plugin -------------- -->
-<script src="/assets/js/plugins/highcharts/highcharts.js"></script>
-<script src="/assets/js/plugins/c3charts/d3.min.js"></script>
-<script src="/assets/js/plugins/c3charts/c3.min.js"></script>
+<script src="{{ asset('public/assets/js/plugins/highcharts/highcharts.js') }}"></script>
+<script src="{{ asset('public/assets/js/plugins/c3charts/d3.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/plugins/c3charts/c3.min.js') }}"></script>
 
 <!-- -------------- Simple Circles Plugin -------------- -->
-<script src="/assets/js/plugins/circles/circles.js"></script>
+<script src="{{ asset('public/assets/js/plugins/circles/circles.js') }}"></script>
 
 <!-- -------------- Maps JSs -------------- -->
-<script src="/assets/js/plugins/jvectormap/jquery.jvectormap.min.js"></script>
-<script src="/assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script>
+<script src="{{ asset('public/assets/js/plugins/jvectormap/jquery.jvectormap.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js') }}"></script>
 
 <!-- -------------- FullCalendar Plugin -------------- -->
-<script src="/assets/js/plugins/fullcalendar/lib/moment.min.js"></script>
-<script src="/assets/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="{{ asset('public/assets/js/plugins/fullcalendar/lib/moment.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/plugins/fullcalendar/fullcalendar.min.js') }}"></script>
 
 <!-- -------------- Date/Month - Pickers -------------- -->
-<script src="/assets/allcp/forms/js/jquery-ui-monthpicker.min.js"></script>
-<script src="/assets/allcp/forms/js/jquery-ui-datepicker.min.js"></script>
+<script src="{{ asset('public/assets/allcp/forms/js/jquery-ui-monthpicker.min.js') }}"></script>
+<script src="{{ asset('public/assets/allcp/forms/js/jquery-ui-datepicker.min.js') }}"></script>
 
 <!-- -------------- Magnific Popup Plugin -------------- -->
-<script src="/assets/js/plugins/magnific/jquery.magnific-popup.js"></script>
+<script src="{{ asset('public/assets/js/plugins/magnific/jquery.magnific-popup.js') }}"></script>
 
 <!-- -------------- Theme Scripts -------------- -->
-<script src="/assets/js/utility/utility.js"></script>
-<script src="/assets/js/demo/demo.js"></script>
-<script src="/assets/js/main.js"></script>
+<script src="{{ asset('public/assets/js/utility/utility.js') }}"></script>
+<script src="{{ asset('public/assets/js/demo/demo.js') }}"></script>
+<script src="{{ asset('public/assets/js/main.js') }}"></script>
 
 <!-- -------------- Widget JS -------------- -->
-<script src="/assets/js/demo/widgets.js"></script>
-<script src="/assets/js/demo/widgets_sidebar.js"></script>
-<script src="/assets/js/pages/dashboard1.js"></script>
+<script src="{{ asset('public/assets/js/demo/widgets.js') }}"></script>
+<script src="{{ asset('public/assets/js/demo/widgets_sidebar.js') }}"></script>
+<script src="{{ asset('public/assets/js/pages/dashboard1.js') }}"></script>
 
 <!-- Sweet alert -->
-<script src="/assets/js/sweetalert.min.js"></script>
+<script src="{{ asset('public/assets/js/sweetalert.min.js') }}"></script>
+
+@if(\Route::getFacadeRoot()->current()->uri() == 'bank-account-details')
+    <script src="{{asset('public/assets/js/function.js')}}"></script>
+@endif
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-asset')--}}
     {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
@@ -676,8 +680,8 @@ h
 {{--@endif--}}
 
 @if(\Route::getFacadeRoot()->current()->uri() == 'edit-promotion/{id}')
-    <script src="/assets/js/pages/forms-widgets.js"></script>
-    <script src="/assets/js/custom.js"></script>
+    <script src="{{ asset('public/assets/js/pages/forms-widgets.js') }}"></script>
+    <script src="{{ asset('public/assets/js/custom.js') }}"></script>
 @endif
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-training-invite')--}}
@@ -775,7 +779,7 @@ h
 </script>
 
 
-<script src="/assets/js/pages/allcp_forms-elements.js"></script>
+<script src="{{ asset('public/assets/js/pages/allcp_forms-elements.js') }}"></script>
 
 @stack('scripts')
 </body>

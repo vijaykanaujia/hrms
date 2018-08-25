@@ -24,7 +24,7 @@
             </ol>
         </div>
         <div class="topbar-right">
-            <h4><a class="link-unstyled" href="/sample_sheet/employee_sample_sheet.xls" title="">
+            <h4><a class="link-unstyled" href="{{asset('public/sample_sheet/employee_sample_sheet.xls')}}" title="">
                     <i class="fa fa-cloud-download text-purple pr10"></i> Sample Sheet </a></h4>
         </div>
     </header>
@@ -113,5 +113,5 @@
     </section>
     <!-- -------------- /Content -------------- -->
 </div>
-{!!  Html::script ('/assets/js/pages/forms-widgets.js')!!}
+{!!  Html::script ('public/assets/js/pages/forms-widgets.js')!!}
 @endsection

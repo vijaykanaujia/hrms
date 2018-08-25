@@ -8,15 +8,15 @@
             <div class="topbar-left">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-icon">
-                        <a href="/dashboard">
+                        <a href="{{url('/dashboard')}}">
                             <span class="fa fa-home"></span>
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="{{url('/dashboard')}}"> Dashboard </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Client </a>
+                        <a href="{{url('/list-client')}}"> Client </a>
                     </li>
                     <li class="breadcrumb-current-item"> Add Client</li>
                 </ol>
@@ -76,9 +76,9 @@
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block save-client" disabled="disabled" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block save-client" value="Submit">
                                                 </div>
-                                                <div class="col-md-2"><a href="/add-client">
+                                                <div class="col-md-2"><a href="{{url('/add-client')}}">
                                                         <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a>
                                                 </div>
                                             </div>

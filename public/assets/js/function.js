@@ -432,10 +432,11 @@ $('#update-bank-account-details').click(function () {
     var ifsc_code = $('#ifsc_code').val();
     var pf_account_number = $('#pf_account_number').val();
     var token = $('#token').val();
+    var url = $('#url').val();
 
     console.log(account_number)
 
-    $.post('/update-account-details', {
+    $.post(url, {
         'employee_id': employee_id,
         'employee_name': employee_name,
         'bank_name': bank_name,

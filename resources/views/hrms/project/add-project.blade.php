@@ -3,20 +3,19 @@
 @section('content')
     <!-- START CONTENT -->
     <div class="content">
-
         <header id="topbar" class="alt">
             <div class="topbar-left">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-icon">
-                        <a href="/dashboard">
+                        <a href="{{url('/dashboard')}}">
                             <span class="fa fa-home"></span>
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="{{url('/dashboard')}}"> Dashboard </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Project </a>
+                        <a href="{{url('/list-project')}}"> Project </a>
                     </li>
                     <li class="breadcrumb-current-item"> Add Project </li>
                 </ol>
@@ -37,7 +36,6 @@
                                 <div class="panel-body pn">
                                     <div class="table-responsive">
                                         <div class="panel-body p25 pb10">
-
                                             @if(Session::has('flash_message'))
                                                 <div class="alert alert-success">
                                                     {{ Session::get('flash_message') }}
@@ -82,10 +80,10 @@
 
                                                 <div class="form-group">
                                                 <label class="col-md-3 control-label"></label>
-                                                <div class="col-md-2"><a href="/add-project" >
-                                                        <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit"></a>
+                                                <div class="col-md-2">
+                                                        <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
                                                 </div>
-                                                <div class="col-md-2"><a href="/add-project" >
+                                                <div class="col-md-2"><a href="{{url('/add-project')}}" >
                                                         <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
                                             </div>
                                             {!! Form::close() !!}

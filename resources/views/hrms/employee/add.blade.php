@@ -17,18 +17,18 @@
 
 
     <!-- -------------- Icomoon -------------- -->
-    {!! Html::style('/assets/fonts/icomoon/icomoon.css') !!}
+    {!! Html::style('public/assets/fonts/icomoon/icomoon.css') !!}
 
             <!-- -------------- CSS - theme -------------- -->
-    {!! Html::style('/assets/skin/default_skin/css/theme.css') !!}
+    {!! Html::style('public/assets/skin/default_skin/css/theme.css') !!}
 
             <!-- -------------- CSS - allcp forms -------------- -->
-    {!! Html::style('/assets/allcp/forms/css/forms.css') !!}
+    {!! Html::style('public/assets/allcp/forms/css/forms.css') !!}
 
-    {!! Html::style('/assets/custom.css') !!}
+    {!! Html::style('public/assets/custom.css') !!}
 
             <!-- -------------- Favicon -------------- -->
-    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="shortcut icon" href="{{asset('public/assets/img/favicon.png')}}">
 
     <!-- -------------- IE8 HTML5 support  -------------- -->
     <!--[if lt IE 9]>
@@ -39,7 +39,6 @@
 </head>
 
 <body class="forms-wizard">
-
 <!-- -------------- Customizer -------------- -->
 <div id="customizer">
     <div class="panel">
@@ -321,7 +320,7 @@
                                         <label class="field prepend-icon append-button file">
                                             <span class="button">Choose File</span>
                                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                                <input type="hidden" value="edit-emp/{{$emps->id}}" id="url">
+                                                <input type="hidden" value="{{ url('/edit-emp') }}/{{$emps->id}}" id="url">
 
                                                 <input type="file" class="gui-file" name="photo" id="photo_upload"
                                                        value="@if($emps && $emps->photo){{$emps->photo}}@endif"
@@ -332,7 +331,7 @@
                                                     <i class="fa fa-cloud-upload"></i>
                                                 </label>
                                             @else
-                                                <input type="hidden" value="add-employee" id="url">
+                                                <input type="hidden" value="{{ url('/add-employee') }}" id="url">
                                                 <input type="file" class="gui-file" name="photo" id="photo_upload"
                                                        onChange="document.getElementById('uploader1').value = this.value;">
                                                 <input type="text" class="gui-input" id="uploader1"
@@ -378,6 +377,25 @@
                                             @else
                                                 <input type="text" name="emp_name" id="emp_name" class="gui-input"
                                                        placeholder="employee name..." required>
+                                                <label for="input002" class="field-icon">
+                                                    <i class="fa fa-user"></i>
+                                                </label>
+                                            @endif
+                                        </label>
+                                    </div>
+
+                                    <div class="section">
+                                        <label for="input002"><h6 class="mb20 mt40">Employee Email </h6></label>
+                                        <label for="input002" class="field prepend-icon">
+                                            @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+                                                <input type="email" name="emp_email" id="emp_email" class="gui-input"
+                                                       value="@if($emps && $emps->employee->email){{$emps->employee->email}}@endif" required>
+                                                <label for="input002" class="field-icon">
+                                                    <i class="fa fa-user"></i>
+                                                </label>
+                                            @else
+                                                <input type="email" name="emp_email" id="emp_email" class="gui-input"
+                                                       placeholder="employee email..." required>
                                                 <label for="input002" class="field-icon">
                                                     <i class="fa fa-user"></i>
                                                 </label>
@@ -1125,41 +1143,38 @@
 
 <!-- -------------- jQuery -------------- -->
 
-{!! Html::script('/assets/js/jquery/jquery-1.11.3.min.js') !!}
-{!! Html::script('/assets/js/jquery/jquery_ui/jquery-ui.min.js') !!}
+{!! Html::script('public/assets/js/jquery/jquery-1.11.3.min.js') !!}
+{!! Html::script('public/assets/js/jquery/jquery_ui/jquery-ui.min.js') !!}
 
         <!-- -------------- HighCharts Plugin -------------- -->
-{!! Html::script('/assets/js/plugins/highcharts/highcharts.js') !!}
+{!! Html::script('public/assets/js/plugins/highcharts/highcharts.js') !!}
 
         <!-- -------------- MonthPicker JS -------------- -->
-{!! Html::script('/assets/allcp/forms/js/jquery-ui-monthpicker.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery-ui-datepicker.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery.spectrum.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery.stepper.min.js') !!}
+{!! Html::script('public/assets/allcp/forms/js/jquery-ui-monthpicker.min.js') !!}
+{!! Html::script('public/assets/allcp/forms/js/jquery-ui-datepicker.min.js') !!}
+{!! Html::script('public/assets/allcp/forms/js/jquery.spectrum.min.js') !!}
+{!! Html::script('public/assets/allcp/forms/js/jquery.stepper.min.js') !!}
 
 
         <!-- -------------- Plugins -------------- -->
-{!! Html::script('/assets/allcp/forms/js/jquery.validate.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery.steps.min.js') !!}
+{!! Html::script('public/assets/allcp/forms/js/jquery.validate.min.js') !!}
+{!! Html::script('public/assets/allcp/forms/js/jquery.steps.min.js') !!}
 
         <!-- -------------- Theme Scripts -------------- -->
-{!! Html::script('/assets/js/utility/utility.js') !!}
-{!! Html::script('/assets/js/demo/demo.js') !!}
-{!! Html::script('/assets/js/main.js') !!}
-{!! Html::script('/assets/js/demo/widgets_sidebar.js') !!}
-{!! Html::script('/assets/js/custom_form_wizard.js') !!}
+{!! Html::script('public/assets/js/utility/utility.js') !!}
+{!! Html::script('public/assets/js/demo/demo.js') !!}
+{!! Html::script('public/assets/js/main.js') !!}
+{!! Html::script('public/assets/js/demo/widgets_sidebar.js') !!}
+{!! Html::script('public/assets/js/custom_form_wizard.js') !!}
 
-{!!  Html::script ('/assets/js/pages/forms-widgets.js')!!}
+{!!  Html::script ('public/assets/js/pages/forms-widgets.js')!!}
 @push('scripts')
-<script src="/assets/js/custom_form_wizard.js"></script>
+<script src="{{ asset('public/assets/js/custom_form_wizard.js') }}"></script>
 @endpush
 
         <!-- -------------- Select2 JS -------------- -->
-<script src="/assets/js/plugins/select2/select2.min.js"></script>
-<script src="/assets/js/function.js"></script>
-
-
-
+<script src="{{ asset('public/assets/js/plugins/select2/select2.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/function.js') }}"></script>
 <!-- -------------- /Scripts -------------- -->
 </body>
 

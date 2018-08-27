@@ -42,6 +42,17 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\UserRole', 'user_id', 'id');
     }
 
+    public function isAdmin()
+    {
+        $userId = Auth::user()->id;
+        $userRole = UserRole::where('user_id', $userId)->first();
+        if($userRole->role_id == 1)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public function isHR()
     {
         $userId = Auth::user()->id;

@@ -34,20 +34,20 @@
             <ul class="nav sub-nav">
                 <li>
                     <a href="{{route('add-employee')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Add Employee </a>
+                        <span class="fa fa-tag"></span> Add Employee </a>
                 </li>
                 <li>
                     <a href="{{route('employee-manager')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Employee Listing </a>
+                        <span class="fa fa-tag"></span> Employee Listing </a>
                 </li>
                 <li>
                     <a href="{{route('upload-emp')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Upload </a>
+                        <span class="fa fa-tag"></span> Upload </a>
                 </li>
             </ul>
         </li>
 
-        @if(\Auth::user()->isAdmin || \Auth::user()->isHR() || \Auth::user()->isManager())
+        @if(\Auth::user()->isAdmin() || \Auth::user()->isHR() || \Auth::user()->isManager())
             <li>
                 <a class="accordion-toggle" href="{{route('dashboard')}}">
                     <span class="fa fa-user"></span>
@@ -57,12 +57,12 @@
                 <ul class="nav sub-nav">
                     <li>
                         <a href="{{route('add-client')}}">
-                            <span class="glyphicon glyphicon-tags"></span> Add Client </a>
+                            <span class="fa fa-tag"></span> Add Client </a>
                     </li>
 
                     <li>
                         <a href="{{route('list-client')}}">
-                            <span class="glyphicon glyphicon-tags"></span> List Client </a>
+                            <span class="fa fa-tag"></span> List Client </a>
                     </li>
                 </ul>
             </li>
@@ -77,22 +77,22 @@
             <ul class="nav sub-nav">
                 <li>
                     <a href="{{route('add-project')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Add Project </a>
+                        <i class="fa fa-tag"></i> Add Project </a>
                 </li>
 
                 <li>
                     <a href="{{route('list-project')}}">
-                        <span class="glyphicon glyphicon-tags"></span> List Project</a>
+                        <i class="fa fa-tag"></i> List Project</a>
                 </li>
 
                 <li>
                     <a href="{{route('assign-project')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Assign Project</a>
+                        <i class="fa fa-tag"></i> Assign Project</a>
                 </li>
 
                 <li>
                     <a href="{{route('project-assignment-listing')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Project Assignment Listing</a>
+                        <i class="fa fa-tag"></i> Project Assignment Listing</a>
                 </li>
             </ul>
         </li>
@@ -362,6 +362,25 @@
             <span class="sidebar-title"> Company Policy </span>
         </a>
     </li>
+    @if(\Auth::user()->isAdmin())
+    <li>
+        <a class="accordion-toggle" href="{{route('dashboard')}}">
+            <span class="fa fa-cog"></span>
+            <span class="sidebar-title">Settings</span>
+            <span class="caret"></span>
+        </a>
+        <ul class="nav sub-nav">
+            <li>
+                <a href="{{route('add-permissions')}}">
+                    <span class="fa fa-tag"></span> Add Permission </a>
+            </li>
+            <li>
+                <a href="{{route('get-permissions')}}">
+                    <span class="fa fa-tag"></span> List Permission </a>
+            </li>
+        </ul>
+    </li>
+    @endif
     <p> &nbsp; </p>
 </ul>
 <!-- -------------- /Sidebar Menu  -------------- -->

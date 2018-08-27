@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model_permissions;
 use App\Models\Employee;
 use App\Models\Role;
 use App\User;
@@ -14,7 +15,8 @@ class RoleController extends Controller
 {
     public function addRole()
     {
-        return view('hrms.role.add_role');
+        $permissions = $this->getPermissions();
+        return view('hrms.role.add_role', compact('permissions'));
     }
 
     Public function processRole(Request $request)
@@ -66,4 +68,17 @@ class RoleController extends Controller
         return redirect('role-list');
     }
 
+    public function getPermissions(){
+        $menues = Model_permissions::$menues;
+        $permissions = Model_permissions::get()->toArray();
+        $data = [];
+        foreach ($menues as $key=>$value){
+            foreach ($permissions as $key=>$value){
+                if($value['menu'] == $key){
+                    $data[$value][$key] = $value['name'];
+                }
+            }
+        }
+        dd($data);
+    }
 }

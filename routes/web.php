@@ -337,7 +337,13 @@ Route::group(['middleware' => ['auth']], function ()
 
     Route::get('delete-project-assignment/{id}', ['as' => 'delete-project-assignment', 'uses' => 'ProjectController@doDeleteAssign']);
 
-
     //Route::get('assign-project', 'ProjectController@assignProject')->name('assign-project');
 
+    //permission
+    Route::get('permissions',['as'=> 'add-permissions','uses'=> 'Permissions@addPermissions']);
+    Route::post('permissions',['as'=> 'post-permissions','uses'=> 'Permissions@postPermissions']);
+    Route::get('get-permissions',['as'=> 'get-permissions','uses'=> 'Permissions@getPermissions']);
+    Route::get('edit-permissions/{id}',['as'=> 'edit-permissions','uses'=> 'Permissions@editPermissions']);
+    Route::post('edit-permissions/{id}',['as'=> 'update-permissions','uses'=> 'Permissions@updatePermissions']);
+    Route::get('delete-permissions/{id}',['as'=> 'delete-permissions','uses'=> 'Permissions@deletePermissions']);
 });

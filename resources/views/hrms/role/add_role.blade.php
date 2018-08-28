@@ -102,12 +102,33 @@
                                                 <label class="col-md-3 control-label"> Permission </label>
                                                 <div class="col-md-6">
                                                     <div class="table-responsive">
-                                                        <table class="table">
+                                                        <table class="table table-bordered">
                                                             <tbody>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <label><input type="checkbox" id="checkall"
+                                                                                  style="position: relative;bottom: -2px;">
+                                                                        Check All</label>
+                                                                </td>
+                                                            </tr>
                                                             @foreach($permissions as $key=>$value)
                                                                 <tr>
-                                                                    <td>{{dump($key)}}</td>
-                                                                    <td>{{print_r($value)}}</td>
+                                                                    <td class="text-capitalize">{{$key}}</td>
+                                                                    <td>
+                                                                        <ul class="list-unstyled"
+                                                                            style="margin-bottom: 0px;">
+                                                                            @foreach($value as $submenu)
+                                                                                <li>
+                                                                                    <label>
+                                                                                        <input type="checkbox"
+                                                                                               name="permissions[]"
+                                                                                               value="{{$submenu['id']}}"
+                                                                                               style="position: relative;bottom: -3px;"> {{$submenu['name']}}
+                                                                                    </label>
+                                                                                </li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -141,4 +162,11 @@
         </section>
 
     </div>
+    <script>
+        window.onload = function () {
+            $(document).on('click','#checkall',function () {
+                $('input[name*="permission"]').attr('checked', $(this).is(':checked'));
+            });
+        }
+    </script>
 @endsection

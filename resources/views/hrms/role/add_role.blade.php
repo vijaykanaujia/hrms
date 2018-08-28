@@ -104,10 +104,10 @@
                                                     <div class="table-responsive">
                                                         <table class="table">
                                                             <tbody>
-                                                            @foreach($permissions as $permission)
+                                                            @foreach($permissions as $key=>$value)
                                                                 <tr>
-                                                                    <td></td>
-                                                                    <td></td>
+                                                                    <td>{{dump($key)}}</td>
+                                                                    <td>{{print_r($value)}}</td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>

@@ -70,15 +70,10 @@ class RoleController extends Controller
 
     public function getPermissions(){
         $menues = Model_permissions::$menues;
-        $permissions = Model_permissions::get()->toArray();
         $data = [];
         foreach ($menues as $key=>$value){
-            foreach ($permissions as $key=>$value){
-                if($value['menu'] == $key){
-                    $data[$value][$key] = $value['name'];
-                }
-            }
+            $data[$value] = Model_permissions::where('menu','=',$key)->get()->toArray();
         }
-        dd($data);
+        return $data;
     }
 }

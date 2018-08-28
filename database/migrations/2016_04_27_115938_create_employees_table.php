@@ -17,6 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->string('photo');
             $table->string('code');
             $table->string('name');
+            $table->string('email');
             $table->tinyInteger('status');
             $table->tinyInteger('gender');
             $table->date('date_of_birth');

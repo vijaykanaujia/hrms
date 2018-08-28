@@ -123,6 +123,10 @@
                                                                                         <input type="checkbox"
                                                                                                name="permissions[]"
                                                                                                value="{{$submenu['id']}}"
+                                                                                               @if(\Route::getFacadeRoot()->current()->uri() == 'edit-role/{id}')
+                                                                                               @if($result && in_array($submenu['id'],$result->getPermissions->pluck('permission_id')->toArray()))checked
+                                                                                               @endif
+                                                                                               @endif
                                                                                                style="position: relative;bottom: -3px;"> {{$submenu['name']}}
                                                                                     </label>
                                                                                 </li>
@@ -164,8 +168,8 @@
     </div>
     <script>
         window.onload = function () {
-            $(document).on('click','#checkall',function () {
-                $('input[name*="permission"]').attr('checked', $(this).is(':checked'));
+            $(document).on('click', '#checkall', function () {
+                $('input[name*="permission"]').prop('checked', $(this).is(':checked'));
             });
         }
     </script>

@@ -18,6 +18,8 @@ class RolePermissions extends Migration
             $table->integer('role_id')->unsigned();
             $table->integer('permission_id')->unsigned();
             $table->timestamps();
+            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
     }
 

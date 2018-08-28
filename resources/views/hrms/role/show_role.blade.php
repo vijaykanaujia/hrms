@@ -72,10 +72,10 @@
                                             </button>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li>
-                                                    <a href="/edit-role/{{$role->id}}">Edit</a>
+                                                    <a href="{{ route('edit-role',$role->id) }}">Edit</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/delete-role/{{$role->id}}">Delete</a>
+                                                    <a href="{{ route('delete-role',$role->id) }}">Delete</a>
                                                 </li>
                                             </ul>
                                         </div>

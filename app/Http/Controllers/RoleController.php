@@ -51,15 +51,15 @@ class RoleController extends Controller
     public function showEdit($id)
     {
         $result = Role::with('getPermissions')->whereid($id)->first();
-        return view('hrms.role.add_role', compact('result'));
+        $permissions = $this->getPermissions();
+        return view('hrms.role.add_role', compact('result','permissions'));
     }
 
     public function doEdit(Request $request, $id)
     {
         $name = $request->name;
         $description = $request->description;
-        $permission = $request->permission;
-
+        $permission = $request->permissions;
         $edit = Role::findOrFail($id);
         if (!empty($name)) {
             $edit->name = $name;
@@ -69,13 +69,15 @@ class RoleController extends Controller
         }
         $edit->save();
         if($edit && !empty($permission)){
-            $edit->getPermissions()->dissociate();
+            $edit->getPermissions()->delete();
             foreach ($permission as $value){
                 $rolePermissions = new RolePermissions();
                 $rolePermissions->permission_id = $value;
                 $edit->getPermissions()->save($rolePermissions);
             }
 
+        }else{
+            $edit->getPermissions()->delete();
         }
         \Session::flash('flash_message', 'Role successfully updated!');
         return redirect('role-list');

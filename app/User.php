@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\UserRole;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
@@ -32,6 +33,10 @@ class User extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
+
+    /** @var  Collection */
+    public $_permissions;
+
     public function employee()
     {
         return $this->hasOne(Employee::class, 'user_id', 'id');
@@ -101,5 +106,24 @@ class User extends Authenticatable
     public function project()
     {
         return $this->hasMany(Project::class);
+    }
+
+    public function setPermission(){
+        $userId = Auth::user()->id;
+        $userRole = UserRole::with('role.getPermissions.getAllPermissions')->where('user_id', $userId)->first();
+    }
+
+    public function hasPermissions($permission = null){
+        $userId = Auth::user()->id;
+        $userRole = UserRole::with('role.getPermissions.getAllPermissions')->where('user_id', $userId)->first();
+        if($userRole->role->getPermissions->isNotEmpty()){
+            $perm = $userRole->role->getPermissions->pluck('getAllPermissions')->toArray();
+            foreach ($perm as $value){
+                if($value[0]['name'] == $permission){
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

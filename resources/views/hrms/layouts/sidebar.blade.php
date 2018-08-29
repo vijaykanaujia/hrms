@@ -32,10 +32,12 @@
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
+                @if(Auth::user()->hasPermissions('add-employee'))
                 <li>
                     <a href="{{route('add-employee')}}">
                         <span class="fa fa-tag"></span> Add Employee </a>
                 </li>
+                @endif
                 <li>
                     <a href="{{route('employee-manager')}}">
                         <span class="fa fa-tag"></span> Employee Listing </a>
